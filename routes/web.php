@@ -1,0 +1,41 @@
+<?php
+
+use App\Models\Applicant;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApplicantsController;
+use App\Notifications\RegistrationEmailNotification;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return view('index');
+// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/', [ApplicantsController::class, 'index'])->name('applicants.index');
+Route::get('apply', [ApplicantsController::class, 'create'])->name('applicants.create');
+Route::post('/', [ApplicantsController::class, 'store'])->name('applicants.store');
+Route::patch('/{applicant}', [ApplicantsController::class, 'update'])->name('applicants.update');
+
+Route::get('/notification', function () {
+    $applicant = Applicant::find(1);
+
+    return (new RegistrationEmailNotification($applicant))
+                ->toMail($applicant->first_name);
+});
+
+
+require __DIR__.'/auth.php';
