@@ -25,7 +25,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', [ApplicantsController::class, 'index'])->name('applicants.index');
+// Route::get('applicants', function () {
+//     return view('applicants');
+// })->middleware(['auth'])->name('applicants');
+
+Route::get('/', [ApplicantsController::class, 'home'])->name('applicants.home');
+Route::get('/applicants', [ApplicantsController::class, 'index'])->middleware(['auth'])->name('applicants.index');
 Route::get('apply', [ApplicantsController::class, 'create'])->name('applicants.create');
 Route::post('/', [ApplicantsController::class, 'store'])->name('applicants.store');
 Route::patch('/{applicant}', [ApplicantsController::class, 'update'])->name('applicants.update');

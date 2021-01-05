@@ -12,16 +12,38 @@ use Illuminate\Support\Facades\Redirect;
 class ApplicantsController extends Controller
 {
     /**
+     * [home loads the homepage]
+     * @return [type] [returns the Home component]
+     */
+    public function home()
+    {
+        return Inertia::render('Applications/Home')
+        ->withViewData([
+            'title' => 'Free Pattern Drafting Training',
+            'description' => 'Register for Image Clothia Innovations FREE pattern drafting training',
+        ]);
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return Inertia::render('Applications/Home')
-        ->withViewData([
-            'title' => 'Free Pattern Drafting Training',
-            'description' => 'Register for Image Clothia Innovations FREE pattern drafting training',
+        $applicants = new Applicant();
+        return response()->json([
+            'status' => 'success',
+            'applicants' =>  $applicants->select([
+                'id',
+                'first_name',
+                'last_name',
+                'gender',
+                'email',
+                'phone_number',
+                'stay_in_ilorin',
+                'experience',
+                'channel',
+            ])->get()
         ]);
     }
 

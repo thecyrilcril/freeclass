@@ -16,12 +16,12 @@ mix.js('resources/js/app.js', 'public/js').js('resources/js/dashboard.js', 'publ
       require('tailwindcss'),
       require('autoprefixer'),
   ])
-  .webpackConfig({
-      resolve: {
-          alias: {
-              ziggy: path.resolve('vendor/tightenco/ziggy/dist'),
-          },
-      },
-  })
+  // .webpackConfig({
+  //     resolve: {
+  //         alias: {
+  //             ziggy: path.resolve('vendor/tightenco/ziggy/dist'),
+  //         },
+  //     },
+  // })
   .webpackConfig(require('./webpack.config'))
   .sourceMaps();

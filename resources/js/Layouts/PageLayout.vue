@@ -4,7 +4,7 @@
           <div class="mx-4 md:mx-0">
             <nav class="container mx-auto flex justify-between py-3">
 
-                <inertia-link :href="route('applicants.index')">
+                <inertia-link :href="route('applicants.home')">
                 <h1 class="uppercase font-medium tracking-wider">Image clothia free training</h1>
                 </inertia-link>
 
