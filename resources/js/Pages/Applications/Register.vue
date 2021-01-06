@@ -153,6 +153,7 @@
               // const { message } = this.$page.props.jetstream.flash
               const { message } = this.$page.props.flash
               this.flash = { message }
+              setTimeout(() => this.flash.message = null, 10000)
               console.log(this.$page.props)
               // this.flash = this.$page.props.flash.message
               this.$swal({

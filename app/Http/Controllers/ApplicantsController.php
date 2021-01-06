@@ -43,7 +43,7 @@ class ApplicantsController extends Controller
                 'stay_in_ilorin',
                 'experience',
                 'channel',
-            ])->get()
+            ])->paginate(10)
         ]);
     }
 
