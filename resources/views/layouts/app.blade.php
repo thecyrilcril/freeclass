@@ -13,6 +13,23 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <style>
+            body: {
+                font-family: 'Commissioner', 'sans-serif';
+            }
+            .swal-title {
+                letter-spacing: 0.01rem;
+                font-weight: 400;
+            }
+            .swal-loader {
+                background: '#F87171';
+            }
+            .swal-container {
+                box-shadow: none;
+            }
+
+        </style>
+
         <!-- Scripts -->
         <script src="{{ asset('js/dashboard.js') }}" defer></script>
     </head>

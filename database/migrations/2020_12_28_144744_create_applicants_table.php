@@ -15,6 +15,7 @@ class CreateApplicantsTable extends Migration
     {
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
+            $table->string('label', 36);
             $table->string('first_name', 20);
             $table->string('last_name', 20);
             $table->string('gender', 6);

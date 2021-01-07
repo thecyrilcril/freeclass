@@ -25,6 +25,7 @@ class ApplicantRequest extends FormRequest
     public function rules()
     {
         return [
+            'label' => 'bail|required|alpha_num|max:36',
             'first_name' => 'bail|required|alpha|between:3, 20',
             'last_name' => 'bail|required|alpha|between:3, 20',
             'gender' => 'bail|required|in:Female,Male',

@@ -22,6 +22,10 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\SendSmsNotification',
             'App\Listeners\SendEmailNotification',
         ],
+        'App\Events\ApplicantApproved' => [
+            'App\Listeners\SendApprovalSmsNotification',
+            'App\Listeners\SendApprovalEmailNotification',
+        ],
     ];
 
     /**

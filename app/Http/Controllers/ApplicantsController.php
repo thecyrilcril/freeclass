@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Applicant;
 use Illuminate\Http\Request;
+use App\Events\ApplicantApproved;
 use App\Events\ApplicantRegistered;
 use App\Http\Requests\ApplicantRequest;
 use Illuminate\Support\Facades\Redirect;
@@ -31,10 +32,13 @@ class ApplicantsController extends Controller
     public function index()
     {
         $applicants = new Applicant();
+        $approvals = Applicant::where('is_accepted', true)->count();
         return response()->json([
             'status' => 'success',
+            'approvals' => $approvals,
             'applicants' =>  $applicants->select([
                 'id',
+                'label',
                 'first_name',
                 'last_name',
                 'gender',
@@ -43,6 +47,7 @@ class ApplicantsController extends Controller
                 'stay_in_ilorin',
                 'experience',
                 'channel',
+                'is_accepted',
             ])->paginate(10)
         ]);
     }
@@ -138,7 +143,44 @@ class ApplicantsController extends Controller
      */
     public function update(Request $request, Applicant $applicant)
     {
-        //
+        try {
+            $validated = (object) $request->validate([
+                'is_accepted' => 'boolean'
+            ]);
+            if ($applicant->stay_in_ilorin === 'Yes') {
+                $applicant = tap($applicant)->update([
+                    'is_accepted' => $validated->is_accepted,
+                ]);
+
+                event(new ApplicantApproved($applicant));
+
+                $approvals = Applicant::where('is_accepted', true)->count();
+                $totalRecords = Applicant::count('id');
+                return response()->json([
+                    'status' => 'success',
+                    'totalRecords' => $totalRecords,
+                    'approvals' => $approvals,
+                    'applicant' => $applicant
+                ]);
+
+
+            }
+
+            return response()->json([
+                'message' => "Sorry, you can't approve an applicant that lives outside Ilorin"
+            ]);
+
+        } catch( \Exception $e ) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ]);
+        } catch ( \Error $e ) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ]);
+        }
     }
 
     /**

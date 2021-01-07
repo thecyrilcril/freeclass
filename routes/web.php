@@ -3,6 +3,7 @@
 use App\Models\Applicant;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicantsController;
+use App\Notifications\ApprovalEmailNotification;
 use App\Notifications\RegistrationEmailNotification;
 
 /*
@@ -39,6 +40,13 @@ Route::get('/notification', function () {
     $applicant = Applicant::find(1);
 
     return (new RegistrationEmailNotification($applicant))
+                ->toMail($applicant->first_name);
+});
+
+Route::get('/notification2', function () {
+    $applicant = Applicant::find(2);
+
+    return (new ApprovalEmailNotification($applicant))
                 ->toMail($applicant->first_name);
 });
 

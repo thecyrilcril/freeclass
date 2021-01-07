@@ -56,8 +56,13 @@ class Ngmobile implements Rule
                     '907',
                     '908',
                     '909',
+                    '912',
+                    '914',
+                    '913',
+                    '916',
                     '915',
                     '917',
+                    '919',
                 ];
                 $pattern = '/^0[0-9]{3}[0-9]{7}/';
                 if (preg_match($pattern, $value)) {
