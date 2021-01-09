@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="bg-purple-600 mb-12 text-gray-100">
+        <header class="bg-gradient-to-r from-purple-500 to-pink-500 mb-12 text-gray-100">
           <div class="mx-4 md:mx-0">
             <nav class="container mx-auto flex justify-between py-3">
 

@@ -103,7 +103,7 @@
               </div>
             </div>
             <!-- <button type="submit" :disabled="form.processing">Submit</button> -->
-            <Button class="mb-4">Register</Button>
+            <Button class="mb-4 bg-pink-500 hover:bg-purple-700 active:bg-purple-900">Register</Button>
         </form>
       </div>
     </page-layout>
@@ -168,7 +168,7 @@
             onError: () => {
               this.$swal({
                 title: 'There are errors:',
-                text: 'please correct the fields in red borders and try again!'
+                text: 'please correct the fields in red border and try again!'
               })
 
             },

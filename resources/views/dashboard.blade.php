@@ -77,11 +77,12 @@
                         async gotoPage(url) {
                             if (url == null) return
                             const response = await axios.get(url)
-                            this.applicants = response.data.applicants.data
-                            this.totalRecords = response.data.applicants.total
-                            this.approvals = response.data.approvals
-                            this.pages = response.data.applicants.links
-
+                            const {data, total} = response.data.applicants
+                            const {approvals, applicants} = response.data
+                            this.applicants = data
+                            this.totalRecords = total
+                            this.approvals = approvals
+                            this.pages = applicants.links
                         }
 
 
@@ -90,8 +91,8 @@
                         const response = await axios.get('/applicants')
                         applicants = response.data.applicants.data
                         totalRecords = response.data.applicants.total
-                        approvals = response.data.approvals
                         pages = response.data.applicants.links
+                        approvals = response.data.approvals
                     }
 "
                     >
@@ -103,7 +104,7 @@
                         <thead>
                           <tr class="tracking-wide">
                             <th class="w-10"></th>
-                            <th>Fullname</th>
+                            <th>Full name</th>
                             <th class="w-10">Gender</th>
                             <th>Email</th>
                             <th class="w-32">Phone number</th>

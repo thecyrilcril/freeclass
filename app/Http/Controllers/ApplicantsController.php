@@ -155,7 +155,7 @@ class ApplicantsController extends Controller
                 event(new ApplicantApproved($applicant));
 
                 $approvals = Applicant::where('is_accepted', true)->count();
-                $totalRecords = Applicant::count('id');
+                $totalRecords = Applicant::count();
                 return response()->json([
                     'status' => 'success',
                     'totalRecords' => $totalRecords,
