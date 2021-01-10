@@ -62,6 +62,7 @@ class Ngmobile implements Rule
                     '916',
                     '915',
                     '917',
+                    '918',
                     '919',
                 ];
                 $pattern = '/^0[0-9]{3}[0-9]{7}/';

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use \Carbon\Carbon;
 
 class Applicant extends Model
 {
@@ -26,5 +27,15 @@ class Applicant extends Model
     {
         // Return email address and name...
         return [$this->email => $this->first_name];
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('jS F, Y');
+    }
+
+    public function getUpdatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('jS F, Y');
     }
 }

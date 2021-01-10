@@ -48,6 +48,8 @@ class ApplicantsController extends Controller
                 'experience',
                 'channel',
                 'is_accepted',
+                'created_at',
+                'updated_at',
             ])->paginate(10)
         ]);
     }

@@ -152,10 +152,25 @@
           this.$inertia.post(this.route('applicants.store'), this.form, {
             onSuccess: () => {
               // const { message } = this.$page.props.jetstream.flash
+              // fbq('init', '773782016562506', {
+              //   em: this.form.email,
+              //   fn: this.form.first_name,
+              //   ln: this.form.last_name,
+              //   ph: this.form.phone_number,
+              //   ge: this.form.gender.toLowerCase().substring(0, 1),
+              //   ct: (this.form.stay_in_ilorin == 'Yes') ? 'ilorin': ''
+              // })
+
+              fbq('track', 'CompleteRegistration', {
+                content_name: 'Free Pattern drafting class',
+                currency: 'NGN',
+                status: 'success',
+                value: 0.00
+              })
               const { message } = this.$page.props.flash
               this.flash = { message }
               setTimeout(() => this.flash.message = null, 10000)
-              console.log(this.$page.props)
+              // console.log(this.$page.props)
               // this.flash = this.$page.props.flash.message
               this.$swal({
                 icon: 'success',

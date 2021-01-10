@@ -59,7 +59,7 @@ Depending on your skill level and the types of outfits you make(or will love to 
 
 
 Good luck,<br><br>
-<img src="http://freeclass.test/images/Kehinde-oni-avatar.jpg" alt="Kehinde Oni" title="Kehinde Oni, Creative Director, Image Clothia Innovations" width="90"><br>
+<img src="https://imageclothia.com/images/Kehinde-oni-avatar.jpg" alt="Kehinde Oni" title="Kehinde Oni, Creative Director, Image Clothia Innovations" width="90"><br>
 **Kehinde Oni.**<br>
 Creative Director,<br>
 {{ config('app.name') }} Innovations.

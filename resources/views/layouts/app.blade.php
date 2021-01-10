@@ -12,7 +12,6 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
         <style>
             body: {
                 font-family: 'Commissioner', 'sans-serif';
@@ -32,6 +31,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/dashboard.js') }}" defer></script>
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
