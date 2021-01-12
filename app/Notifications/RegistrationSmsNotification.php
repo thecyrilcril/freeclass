@@ -59,7 +59,7 @@ class RegistrationSmsNotification extends Notification implements ShouldQueue
     public function toSMS($notifiable)
     {
         $recipient = ucfirst($this->applicant->first_name);
-        $message = 'Welcome ' . $recipient . ', Thanks for taking time to register. I am so excited to see you in class, but unfortunately we can\'t pick every one';
+        $message = "Welcome $recipient, Thanks for taking time to register. I am so excited to see you in class. Please bear in mind that this is a real life training that happens in batches, as such we have very limited slots and there is a screening process. You will be contacted if you are selected\r\nGood luck!";
         return (new SMSMessage)
             ->content($message);
 

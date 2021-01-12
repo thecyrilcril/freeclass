@@ -29,17 +29,17 @@ This training is designed to kick-start you into becoming a *highly paid and eff
 
 I will urge you to make the most out of this opportunity, come with a *new notebook(with a pen of course)* and an open mind to learn.
 
-### What will I be learning—
-- The body anatomy and how it relates to fashion design
-- How to take accurate body measurement
-- How to cut sewing patterns
-- Introduction to pattern drafting (why pattern drafting?)
-- How to cut pattern blocks
-- Essential pattern drafting tools
-- The basic Pattern Set
-  - 2 Practical classes from the basic pattern set
-- Design Analysis and Style deconstruction
-- and more
+# What will I be learning—
+- The body anatomy and how it relates to fashion design.
+- How to take accurate body measurement.
+- How to cut sewing patterns.
+- Introduction to pattern drafting (why pattern drafting?).
+- How to cut pattern blocks.
+- Essential pattern drafting tools.
+- The basic Pattern Set.
+  - 2 Practical classes from the basic pattern set.
+- Design Analysis and Style deconstruction.
+- and more...
 
 In short you will be learning the *how*, *why* and *when*
 

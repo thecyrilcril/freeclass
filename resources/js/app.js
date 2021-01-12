@@ -4,7 +4,6 @@ require('./bootstrap');
 
 import Vue from 'vue'
 import { App, plugin } from '@inertiajs/inertia-vue'
-// import PortalVue from 'portal-vue'
 import VueMeta from 'vue-meta'
 import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
@@ -34,7 +33,6 @@ Vue.mixin({ methods: { route } })
 
 Vue.use(plugin)
 
-// Vue.use(PortalVue);
 Vue.use(VueMeta, {
     refreshOnceOnNavigation: true
 });

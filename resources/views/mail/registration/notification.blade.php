@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hi {{ $first_name }},
 
-Thank you for registering for My free Pattern drafting class.\
+Thank you for registering for our free Pattern drafting class.\
 I am so excited😁😁 to introduce you to the\
 *Foundations of Modern Fashion design* and also meet you __in real life__.
 
@@ -9,7 +9,7 @@ I have a lot of valuable information and techniques to share with you!!!
 
 @component('mail::subcopy')
 __Important!__\
-Because this is an hands-on class, there only a few slots availaible and there is a selection process. You will be contacted once you are selected.
+Because this is a hands-on class, there only a few slots available and there is a selection process. You will be contacted if selected.
 
 @endcomponent
 

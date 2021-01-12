@@ -1,7 +1,7 @@
 <template>
     <page-layout>
-      <div v-if="flash.message" class="lg:w-2/3 mb-2 bg-purple-200 rounded-l py-2 px-4">
-        Hi {{ flash.message }}
+      <div v-if="flash.message" class="lg:w-2/3 mb-2 font-medium bg-purple-100 rounded-l py-2 px-4">
+        Hi {{ flash.message }} please check your Email and SMS for further information.
       </div>
 
       </div>
@@ -67,17 +67,17 @@
               <div class="text-gray-400 mb-2">Your experience level</div>
               <span class="text-gray-700">Which of these statements best describe you?</span>
               <div class="mt-2">
-                <label class="block items-center">
+                <label class="flex leading-8 items-center">
                   <input v-model="form.experience" type="radio" class="form-radio" name="experience" value="I want to learn Fashion design">
                   <span class="ml-2">I want to learn Fashion design.</span>
                 </label>
-                <label class="block items-center">
+                <label class="flex leading-8 items-center">
                   <input v-model="form.experience" type="radio" class="form-radio" name="experience" value="I am a beginner Fashion designer">
                   <span class="ml-2">I am a beginner Fashion designer.</span>
                 </label>
-                <label class="block items-center">
+                <label class="flex leading-8 items-center">
                   <input v-model="form.experience" type="radio" class="form-radio" name="experience" value="I am a professional Fashion designer but I don't understand pattern darfting">
-                  <span class="ml-2">I am a professional Fashion designer but I don't understand pattern drafting.</span>
+                  <span class="ml-2">Professional, but I don't understand pattern drafting.</span>
                 </label>
                 <div v-if="errors.experience" class="mt-1 text-red-600 text-sm">{{ errors.experience }}</div>
 
@@ -87,22 +87,21 @@
               <div class="text-gray-400 mb-2">How you got to know about this FREE training</div>
               <span class="text-gray-700">How did you learn about this training?</span>
               <div class="mt-2">
-                <label class="inline-flex items-center">
-                  <input  v-model="form.channel"type="radio" class="form-radio" name="channel" value="Facebook">
-                  <span class="ml-2">Facebook</span>
+                <label class="block md:inline-flex md:items-center">
+                  <input v-model="form.channel"type="radio" class="form-radio" name="channel" value="Facebook">
+                  <span class="ml-2 leading-8">Facebook</span>
                 </label>
-                <label class="inline-flex items-center ml-6">
+                <label class="block md:inline-flex md:items-center md:ml-6">
                   <input v-model="form.channel" type="radio" class="form-radio" name="channel" value="Instagram">
-                  <span class="ml-2">Instagram</span>
+                  <span class="ml-2 leading-8">Instagram</span>
                 </label>
-                <label class="inline-flex items-center ml-6">
+                <label class="block md:inline-flex md:items-center md:ml-6">
                   <input v-model="form.channel" type="radio" class="form-radio" name="channel" value="Someone">
-                  <span class="ml-2">Someone (Friend / Acquaintance)</span>
+                  <span class="ml-2 leading-8">Someone (Friend / Acquaintance)</span>
                 </label>
                 <div v-if="errors.channel" class="mt-1 text-red-600 text-sm">{{ errors.channel }}</div>
               </div>
             </div>
-            <!-- <button type="submit" :disabled="form.processing">Submit</button> -->
             <Button class="mb-4 bg-pink-500 hover:bg-purple-700 active:bg-purple-900">Register</Button>
         </form>
       </div>
@@ -151,15 +150,6 @@
           this.form['label'] = this.generateLabel()
           this.$inertia.post(this.route('applicants.store'), this.form, {
             onSuccess: () => {
-              // const { message } = this.$page.props.jetstream.flash
-              // fbq('init', '773782016562506', {
-              //   em: this.form.email,
-              //   fn: this.form.first_name,
-              //   ln: this.form.last_name,
-              //   ph: this.form.phone_number,
-              //   ge: this.form.gender.toLowerCase().substring(0, 1),
-              //   ct: (this.form.stay_in_ilorin == 'Yes') ? 'ilorin': ''
-              // })
 
               fbq('track', 'CompleteRegistration', {
                 content_name: 'Free Pattern drafting class',
@@ -169,9 +159,7 @@
               })
               const { message } = this.$page.props.flash
               this.flash = { message }
-              setTimeout(() => this.flash.message = null, 10000)
-              // console.log(this.$page.props)
-              // this.flash = this.$page.props.flash.message
+              // setTimeout(() => this.flash.message = null, 10000)
               this.$swal({
                 icon: 'success',
                 iconColor: '#8B5CF6',
@@ -182,8 +170,8 @@
             },
             onError: () => {
               this.$swal({
-                title: 'There are errors:',
-                text: 'please correct the fields in red border and try again!'
+                title: 'Errors:',
+                text: 'please correct the fields in red'
               })
 
             },

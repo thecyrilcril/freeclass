@@ -94,7 +94,7 @@ class ApplicantsController extends Controller
 
             $request->session()->flash(
                 'message',
-                ucfirst($applicant->first_name) .', you are registered!'
+                ucfirst($applicant->first_name) .', you are registered,'
             );
 
             return Redirect::route('applicants.create');

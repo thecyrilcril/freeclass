@@ -11,11 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').js('resources/js/dashboard.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
+mix
+  .webpackConfig(require('./webpack.config'))
+  .js('resources/js/app.js', 'public/js')
+  .js('resources/js/dashboard.js', 'public/js')
+  .postCss('resources/css/app.css', 'public/css', [
       require('postcss-import'),
       require('tailwindcss'),
-      require('autoprefixer'),
-  ])
+  ]);
   // .webpackConfig({
   //     resolve: {
   //         alias: {
@@ -23,5 +26,6 @@ mix.js('resources/js/app.js', 'public/js').js('resources/js/dashboard.js', 'publ
   //         },
   //     },
   // })
-  .webpackConfig(require('./webpack.config'))
-  .sourceMaps();
+  // .webpackConfig(require('./webpack.config'));
+  // .version();
+  // .sourceMaps();
