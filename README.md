@@ -1,4 +1,4 @@
-<p align="center"><a href="https://imageclothia.com" target="_blank"><img src="https://imageclothia.com/images/image-clothia-logo.png" width="400"></a></p>
+<p align="center"><a href="https://imageclothia.com" target="_blank"><img src="https://imageclothia.com/images/image-clothia-logo.png" width="200"></a></p>
 
 ## Image Clothia Free Training
 
