@@ -150,7 +150,6 @@
           this.form['label'] = this.generateLabel()
           this.$inertia.post(this.route('applicants.store'), this.form, {
             onSuccess: () => {
-
               fbq('track', 'CompleteRegistration', {
                 content_name: 'Free Pattern drafting class',
                 currency: 'NGN',
@@ -184,7 +183,7 @@
             window.crypto.getRandomValues(a);
             return (performance.now().toString(36)+Array.from(a).map(A => A.toString(36)).join('')).replace(/\./g,'');
         },
-      },
+      }
     }
 </script>
 

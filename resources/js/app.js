@@ -36,6 +36,10 @@ Vue.use(plugin)
 Vue.use(VueMeta, {
     refreshOnceOnNavigation: true
 });
+
+
+
+
 const swalOptions = {
   toast: true,
   position: "top-end",
@@ -54,6 +58,8 @@ Vue.use(VueSweetalert2, swalOptions);
 
 const el = document.getElementById('app')
 
+
+
 new Vue({
   render: h => h(App, {
     props: {
@@ -64,3 +70,4 @@ new Vue({
     },
   }),
 }).$mount(el)
+
