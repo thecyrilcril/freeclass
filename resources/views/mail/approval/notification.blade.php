@@ -13,14 +13,15 @@ You have started your journey to *becoming a highly paid fashion designer* and a
 The First is getting the tools
 
 # Tools
-1. Notebook and Pen
-2. Ruler
-3. Pencil
-4. Eraser
-5. Brown paper / Pattern paper (available for sale during training)
-6. Cardboards
-7. Tape Rule
-8. Scissors
+1. Nose Mask
+2. Notebook and Pen
+3. Ruler
+4. Pencil
+5. Eraser
+6. Brown paper / Pattern paper (available for sale during training)
+7. Cardboards
+8. Tape Rule
+9. Scissors
 
 __*Please note that all these are mandatory for the class.*__
 
