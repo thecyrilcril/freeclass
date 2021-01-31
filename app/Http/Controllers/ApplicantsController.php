@@ -36,21 +36,20 @@ class ApplicantsController extends Controller
         return response()->json([
             'status' => 'success',
             'approvals' => $approvals,
-            'applicants' =>  $applicants->select([
-                'id',
-                'label',
-                'first_name',
-                'last_name',
-                'gender',
-                'email',
-                'phone_number',
-                'stay_in_ilorin',
-                'experience',
-                'channel',
-                'is_accepted',
-                'created_at',
-                'updated_at',
-            ])->paginate(10)
+            'applicants' =>  $applicants->paginate(10)
+        ]);
+    }
+
+    public function search($query)
+    {
+        $applicants = new Applicant();
+        // $results =  $applicants->search($query, ['experience', 'first_name', 'last_name', 'email']);
+        $results =  $applicants->search($query);
+        $approvals = $results->get()->where('is_accepted', true)->count();
+        return response()->json([
+            'status' => 'success',
+            'approvals' => $approvals,
+            'applicants' =>  $results->paginate(10)
         ]);
     }
 

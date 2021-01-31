@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Sofa\Eloquence\Eloquence;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,8 +10,21 @@ use \Carbon\Carbon;
 
 class Applicant extends Model
 {
-    use Notifiable, HasFactory;
+    use Eloquence, Notifiable, HasFactory;
+
     protected $guarded = [];
+
+    protected $searchableColumns = [
+        'first_name',
+        'last_name',
+        'gender' => 9,
+        'email',
+        'phone_number',
+        'stay_in_ilorin',
+        'experience' => 10,
+        'is_accepted' => 10,
+        'channel'
+    ];
 
     public function routeNotificationForApplicant()
     {
@@ -38,4 +52,5 @@ class Applicant extends Model
     {
         return Carbon::parse($value)->format('jS F, Y');
     }
+
 }

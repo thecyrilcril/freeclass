@@ -13,6 +13,7 @@
                     {
                         applicants: [],
                         pages: [],
+                        query: null,
                         totalRecords: null,
                         approvals: null,
                         approveButtonText: 'Approve',
@@ -45,6 +46,8 @@
                             this.applicants.splice(applicantIndex, 1, newApplicantData)
 
                         },
+
+
                         async approveApplicant(applicant_id, applicantLabel){
                             if (applicant_id == null) return
                             const url = `/${applicant_id}`
@@ -83,6 +86,20 @@
                             this.totalRecords = total
                             this.approvals = approvals
                             this.pages = applicants.links
+                        },
+
+                        async performSearch() {
+                            if (this.query == '') {
+                                this.loadApplicant()
+                                return false
+                            }
+                            const response = await axios.get(`/s/${this.query}`)
+                            const {data, total} = response.data.applicants
+                            const {approvals, applicants} = response.data
+                            this.applicants = data
+                            this.totalRecords = total
+                            this.approvals = approvals
+                            this.pages = applicants.links
                         }
 
 
@@ -94,10 +111,13 @@
                         pages = response.data.applicants.links
                         approvals = response.data.approvals
                     }
-"
+                    "
                     >
                     <div class="flex font-medium text-white mb-4 justify-between">
                         <div class="bg-blue-500 w-64 py-2 text-center tracking-wide" x-text="`${totalRecords} Registered Applicants`"></div>
+                        <div class="flex-1 px-4 tracking-wide">
+                            <input class="w-full text-gray-800 py-2 border-2 border-gray-200" type="text" x-model="query" tabindex="1" @blur="performSearch()" placeholder="type your search...[tab]">
+                        </div>
                         <div class="bg-green-400 w-64 py-2 text-center tracking-wide" x-text="`${approvals} Approved Applicants`"></div>
                     </div>
                     <table class="w-full table-fixed text-sm mb-4">

@@ -150,12 +150,15 @@
           this.form['label'] = this.generateLabel()
           this.$inertia.post(this.route('applicants.store'), this.form, {
             onSuccess: () => {
-              fbq('track', 'CompleteRegistration', {
-                content_name: 'Free Pattern drafting class',
-                currency: 'NGN',
-                status: 'success',
-                value: 0.00
-              })
+              if (window.location.pathname == '/apply') {
+                fbq('track', 'CompleteRegistration', {
+                  content_name: 'Free Pattern drafting class',
+                  currency: 'NGN',
+                  status: 'success',
+                  value: 0.00
+                })
+
+              }
               const { message } = this.$page.props.flash
               this.flash = { message }
               // setTimeout(() => this.flash.message = null, 10000)

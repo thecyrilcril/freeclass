@@ -9,7 +9,7 @@ I have a lot of valuable information and techniques to share with you!!!
 
 @component('mail::subcopy')
 __Important!__\
-Because this is a hands-on class, there only a few slots available and there is a selection process. You will be contacted if selected.
+Because this class is hands-on, there are few slots available and there is a selection process. You will be contacted if selected.
 
 @endcomponent
 
