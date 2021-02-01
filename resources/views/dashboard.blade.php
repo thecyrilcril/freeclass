@@ -87,15 +87,18 @@
                             this.approvals = approvals
                             this.pages = applicants.links
                         },
+                        async loadAllApplicants() {
+                            const response = await axios.get('/applicants')
+                            this.applicants = response.data.applicants.data
+                            this.totalRecords = response.data.applicants.total
+                            this.pages = response.data.applicants.links
+                            this.approvals = response.data.approvals
+                        },
 
                         async performSearch() {
-                            if (this.query.trim() == '') {
-                                const response = await axios.get('/applicants')
-                                this.applicants = response.data.applicants.data
-                                this.totalRecords = response.data.applicants.total
-                                this.pages = response.data.applicants.links
-                                this.approvals = response.data.approvals
-                                return false
+
+                            if (this.query == null || this.query.trim() == '') {
+                                return this.loadAllApplicants()
                             }
                             const response = await axios.get(`/s/${this.query}`)
                             const {data, total} = response.data.applicants
@@ -120,7 +123,7 @@
                     <div class="flex font-medium text-white mb-4 justify-between">
                         <div class="bg-blue-500 w-64 py-2 text-center tracking-wide" x-text="`${totalRecords} Registered Applicants`"></div>
                         <div class="flex-1 px-4 tracking-wide">
-                            <input class="w-full text-gray-800 py-2 border-2 border-gray-200" type="text" x-model="query" tabindex="1" @blur="performSearch()" placeholder="type your search...[tab]">
+                            <input class="w-full text-gray-800 py-2 border-2 border-gray-200" type="text" x-model="query" tabindex="-1" @blur="performSearch()" placeholder="type your search...[tab]">
                         </div>
                         <div class="bg-green-400 w-64 py-2 text-center tracking-wide" x-text="`${approvals} Approved Applicants`"></div>
                     </div>
