@@ -89,8 +89,12 @@
                         },
 
                         async performSearch() {
-                            if (this.query == '') {
-                                this.loadApplicant()
+                            if (this.query.trim() == '') {
+                                const response = await axios.get('/applicants')
+                                this.applicants = response.data.applicants.data
+                                this.totalRecords = response.data.applicants.total
+                                this.pages = response.data.applicants.links
+                                this.approvals = response.data.approvals
                                 return false
                             }
                             const response = await axios.get(`/s/${this.query}`)
