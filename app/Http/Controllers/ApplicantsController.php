@@ -44,7 +44,7 @@ class ApplicantsController extends Controller
     {
         $applicants = new Applicant();
         // $results =  $applicants->search($query, ['experience', 'first_name', 'last_name', 'email']);
-        $results =  $applicants->search($query, false);
+        $results =  $applicants->search($query);
         $approvals = $results->get()->where('is_accepted', true)->count();
         return response()->json([
             'status' => 'success',

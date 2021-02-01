@@ -47,6 +47,14 @@
 
                         },
 
+                        noApplicant() {
+                            return this.applicants.length < 1
+                        },
+
+                        focusSearch() {
+                            const searchInput = this.$refs.searchinput
+                            searchInput.focus()
+                        },
 
                         async approveApplicant(applicant_id, applicantLabel){
                             if (applicant_id == null) return
@@ -117,13 +125,16 @@
                         totalRecords = response.data.applicants.total
                         pages = response.data.applicants.links
                         approvals = response.data.approvals
+
+
                     }
                     "
+                    @keydown.window.space="focusSearch"
                     >
                     <div class="flex font-medium text-white mb-4 justify-between">
                         <div class="bg-blue-500 w-64 py-2 text-center tracking-wide" x-text="`${totalRecords} Registered Applicants`"></div>
                         <div class="flex-1 px-4 tracking-wide">
-                            <input class="w-full text-gray-800 py-2 border-2 border-gray-200" type="text" x-model="query" tabindex="-1" @blur="performSearch()" placeholder="type your search...[tab]">
+                            <input class="w-full text-gray-800 py-2 border-2 border-gray-200" type="text" x-ref="searchinput" x-model="query" @keyup.debounce="performSearch()" placeholder="[space]...type your search">
                         </div>
                         <div class="bg-green-400 w-64 py-2 text-center tracking-wide" x-text="`${approvals} Approved Applicants`"></div>
                     </div>
@@ -156,6 +167,9 @@
                                     <button @click="approveApplicant(applicant.id, applicant.label)" x-show="applicant.is_accepted == 0" class="inline-flex items-center px-4 py-1 bg-gray-800 border border-transparent rounded-md font-mediumcm text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150" x-text="approveButtonText"></button>
                                    </td>
                                 </tr>
+                            </template>
+                            <template x-if="noApplicant()">
+                                <div class="absolute w-full text-center text-red-500 font-semibold text-lg py-2">Oops! search returns no result</div>
                             </template>
 
                         </tbody>
