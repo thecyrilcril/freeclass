@@ -9,9 +9,6 @@
     <meta name="description" content="{{ $description ?? 'Free Class Dashboard'}}">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <style>
-        body: {
-            font-family: 'Commissioner', 'sans-serif';
-        }
         .swal-title {
             letter-spacing: 0.01rem;
             font-weight: 400;

@@ -120,7 +120,6 @@
 
 
                     }"
-                    x-cloak
                     x-init="async () => {
                         const response = await axios.get('/applicants')
                         applicants = response.data.applicants.data
