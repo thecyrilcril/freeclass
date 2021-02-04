@@ -1,3 +1,4 @@
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -119,6 +120,7 @@
 
 
                     }"
+                    x-cloak
                     x-init="async () => {
                         const response = await axios.get('/applicants')
                         applicants = response.data.applicants.data
@@ -175,7 +177,7 @@
                         </tbody>
                     </table>
                     {{-- Pagination --}}
-                    <template x-for="(page, index) in pages" :key="index">
+                    <template x-if="!noApplicant()" x-for="(page, index) in pages" :key="index">
                             <button x-show="page.url != null" class="focus:outline-none cursor-pointer rounded font-medium px-3 py-1 mx-2 bg-purple-100 text-purple-600" x-text="cleanPagesLabel(page.label)"
                             :class="{'bg-purple-300 text-white' : page.active}"
                             @click="gotoPage(page.url)"></button>

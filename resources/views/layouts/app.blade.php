@@ -13,10 +13,10 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <style>
-            body: {
+            body {
                 font-family: 'Commissioner', 'sans-serif';
             }
-            .swal-title {
+/*            .swal-title {
                 letter-spacing: 0.01rem;
                 font-weight: 400;
             }
@@ -25,7 +25,8 @@
             }
             .swal-container {
                 box-shadow: none;
-            }
+            }*/
+            [x-cloak] { display: none; }
 
         </style>
 
