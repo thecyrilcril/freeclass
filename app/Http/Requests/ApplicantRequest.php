@@ -60,11 +60,11 @@ class ApplicantRequest extends FormRequest
     {
         return [
             'first_name.required' => 'Your first name is required.',
-            'first_name.alpha' => '',
-            'first_name.between' => '',
+            'first_name.alpha' => 'Your first name should only contain alphabets',
+            'first_name.between' => 'Your first name should have between 3 to 20 characters',
             'last_name.required' => 'Your last name is required.',
-            'last_name.alpha' => '',
-            'last_name.between' => '',
+            'last_name.alpha' => 'Your last name should only contain alphabets',
+            'last_name.between' => 'Your last name should have between 3 to 20 characters',
             'gender.required' => 'Please select your gender.',
             'phone_number.digits' => 'Your phone number must be 11 digits.',
             // 'gender.in' => '',
