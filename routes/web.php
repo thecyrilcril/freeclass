@@ -37,7 +37,8 @@ Route::post('/', [ApplicantsController::class, 'store'])->name('applicants.store
 Route::patch('/{applicant}', [ApplicantsController::class, 'update'])->name('applicants.update');
 
 // Search endpoints
-Route::get('/s/{query?}', [ApplicantsController::class, 'search']);
+// Route::get('/s/{query?}', [ApplicantsController::class, 'search']);
+Route::get('/s', [ApplicantsController::class, 'search']);
 // Route::get('/?s={query?}', [ApplicantsController::class, 'search']);
 // ->middleware(['auth'])->name('applicants.search');
 

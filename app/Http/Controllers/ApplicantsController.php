@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Inertia\Inertia;
 use App\Models\Applicant;
 use Illuminate\Http\Request;
@@ -40,16 +41,23 @@ class ApplicantsController extends Controller
         ]);
     }
 
-    public function search($query)
+    public function search(Request $request)
     {
+        $query = $request->input('query');
+        $fromDate = $request->input('from');
+        $toDate = $request->input('to');
         $applicants = new Applicant();
         // $results =  $applicants->search($query, ['experience', 'first_name', 'last_name', 'email']);
-        $results =  $applicants->search($query);
+        $results =  $applicants
+                        ->whereDate('updated_at', '>=', Carbon::parse($fromDate))
+                        ->whereDate('updated_at', '<=', Carbon::parse($toDate))
+                        ->search($query, false);
+
         $approvals = $results->get()->where('is_accepted', true)->count();
         return response()->json([
             'status' => 'success',
             'approvals' => $approvals,
-            'applicants' =>  $results->paginate(10)
+            'applicants' =>  $results->paginate(10)->withQueryString()
         ]);
     }
 

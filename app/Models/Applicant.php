@@ -17,13 +17,13 @@ class Applicant extends Model
     protected $searchableColumns = [
         'first_name',
         'last_name',
-        'gender' => 9,
+        'gender' => 8, //9
         'email',
         'phone_number',
-        'stay_in_ilorin',
-        'experience' => 10,
+        'stay_in_ilorin' => 10,
+        'experience' => 10, //10
         'is_accepted' => 10,
-        'channel'
+        'channel',
     ];
 
     public function routeNotificationForApplicant()

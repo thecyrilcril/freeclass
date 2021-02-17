@@ -30,7 +30,8 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/dashboard.js') }}" defer></script>
-
+        <script src="https://unpkg.com/moment"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pikaday@1.8.2/pikaday.min.js"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -48,5 +49,17 @@
                 {{ $slot }}
             </main>
         </div>
+{{--         <script>
+            let fromPicker = new Pikaday({
+                field: document.getElementById('from-datepicker'),
+                minDate: new Date(2021, 01, 02),
+                maxDate: new Date(),
+            });
+            let toPicker = new Pikaday({
+                field: document.getElementById('to-datepicker'),
+                minDate: new Date(2021, 01, 02),
+                maxDate: new Date(),
+            });
+        </script> --}}
     </body>
 </html>

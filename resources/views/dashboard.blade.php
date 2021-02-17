@@ -15,6 +15,8 @@
                         applicants: [],
                         pages: [],
                         query: null,
+                        fromDate: '',
+                        toDate: '',
                         totalRecords: null,
                         approvals: null,
                         approveButtonText: 'Approve',
@@ -105,11 +107,19 @@
                         },
 
                         async performSearch() {
+                        {{-- console.log(this.query, this.fromDate, this.toDate) --}}
+                        {{-- return --}}
 
                             if (this.query == null || this.query.trim() == '') {
                                 return this.loadAllApplicants()
                             }
-                            const response = await axios.get(`/s/${this.query}`)
+                            const response = await axios.get('/s',{
+                                params: {
+                                    query: `${this.query}`,
+                                    from: `${this.fromDate}`,
+                                    to: `${this.toDate}`,
+                                }
+                            })
                             const {data, total} = response.data.applicants
                             const {approvals, applicants} = response.data
                             this.applicants = data
@@ -126,6 +136,21 @@
                         totalRecords = response.data.applicants.total
                         pages = response.data.applicants.links
                         approvals = response.data.approvals
+                        let fromPicker = new Pikaday({
+                            field: $refs.fromDate,
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(2021, 00, 22),
+                            maxDate: new Date(),
+                        })
+
+                        let toPicker = new Pikaday({
+                            field: $refs.toDate,
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(2021, 00, 02),
+                            maxDate: new Date(),
+                        })
+                        fromPicker.setDate(new Date(2021, 00, 22))
+                        toPicker.setDate(new Date())
 
 
                     }
@@ -138,6 +163,15 @@
                             <input class="w-full text-gray-800 py-2 border-2 border-gray-200" type="text" x-ref="searchinput" x-model="query" @keyup.debounce="performSearch()" placeholder="[space]...type your search">
                         </div>
                         <div class="bg-green-400 w-64 py-2 text-center tracking-wide" x-text="`${approvals} Approved Applicants`"></div>
+                    </div>
+                    <div class="flex font-medium text-white mb-4 justify-between text-gray-800">
+                        <x-date-pickr model="fromDate" ref="fromDate">
+                            From:
+                        </x-date-pickr>
+
+                        <x-date-pickr model="toDate" ref="toDate">
+                            To:
+                        </x-date-pickr>
                     </div>
                     <table class="w-full table-fixed text-sm mb-4">
                         <thead>
