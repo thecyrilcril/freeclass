@@ -51,7 +51,7 @@ class ApplicantsController extends Controller
         $results =  $applicants
                         ->whereDate('updated_at', '>=', Carbon::parse($fromDate))
                         ->whereDate('updated_at', '<=', Carbon::parse($toDate))
-                        ->search($query, false);
+                        ->search($query);
 
         $approvals = $results->get()->where('is_accepted', true)->count();
         return response()->json([

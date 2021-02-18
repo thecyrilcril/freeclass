@@ -17,7 +17,7 @@ class Applicant extends Model
     protected $searchableColumns = [
         'first_name',
         'last_name',
-        'gender' => 8, //9
+        'gender' => 8, //8
         'email',
         'phone_number',
         'stay_in_ilorin' => 10,

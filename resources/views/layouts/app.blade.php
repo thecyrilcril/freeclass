@@ -26,12 +26,15 @@
             .swal-container {
                 box-shadow: none;
             }
+            [x-cloak] {
+                display: none !important;
+            }
         </style>
 
         <!-- Scripts -->
         <script src="{{ asset('js/dashboard.js') }}" defer></script>
-        <script src="https://unpkg.com/moment"></script>
-        <script src="https://cdn.jsdelivr.net/npm/pikaday@1.8.2/pikaday.min.js"></script>
+        {{-- <script src="https://unpkg.com/moment"></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/pikaday@1.8.2/pikaday.min.js"></script> --}}
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

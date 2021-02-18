@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -15,8 +14,8 @@
                         applicants: [],
                         pages: [],
                         query: null,
-                        fromDate: '',
-                        toDate: '',
+                        fromDate: null,
+                        toDate: null,
                         totalRecords: null,
                         approvals: null,
                         approveButtonText: 'Approve',
@@ -107,8 +106,6 @@
                         },
 
                         async performSearch() {
-                        {{-- console.log(this.query, this.fromDate, this.toDate) --}}
-                        {{-- return --}}
 
                             if (this.query == null || this.query.trim() == '') {
                                 return this.loadAllApplicants()
