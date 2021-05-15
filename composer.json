@@ -13,7 +13,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.3.5",
-        "laravel/framework": "8.24.0",
+        "laravel/framework": "8.40.0",
         "laravel/tinker": "^2.5",
         "sofa/eloquence": "dev-master",
         "tightenco/ziggy": "^1.0"
