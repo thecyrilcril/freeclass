@@ -5,7 +5,7 @@
             <nav class="container mx-auto flex justify-between py-3">
 
                 <inertia-link :href="route('applicants.home')">
-                <h1 class="uppercase font-medium tracking-wider">Image clothia free training</h1>
+                <h1 class="uppercase font-medium tracking-wider">Image clothia innovations limited</h1>
                 </inertia-link>
 
                 <ul class="flex items-center">
