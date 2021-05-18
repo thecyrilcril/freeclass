@@ -8,7 +8,7 @@ This is a foundational class for the modern fashion designer and we are confiden
 I want to remind you this training is hands-on and packed with so much value that will shape your career as a fashion designer and only made available to a few people.
 
 
-You have started your journey to *becoming a highly paid fashion designer* and as such there are few things to do to get the best out of this free training.
+You have started your journey to becoming a truly *Professional fashion designer* and as such there are few things you need to get the best out of this free training.
 
 The First is getting the tools
 
@@ -26,7 +26,7 @@ The First is getting the tools
 __*Please note that all these are mandatory for the class.*__
 
 # Mindset
-This training is designed to kick-start you into becoming a *highly paid and efficient* fashion designer as a beginner ...and teach you a lot of industry techniques and their *whys* if you are a Pro.
+This training is designed to kick-start you into becoming a very efficient fashion designer.
 
 I will urge you to make the most out of this opportunity, come with a *new notebook(with a pen of course)* and an open mind to learn.
 
@@ -45,7 +45,7 @@ I will urge you to make the most out of this opportunity, come with a *new noteb
 In short you will be learning the *how*, *why* and *when*
 
 # Resources (Invest in yourself)
-Depending on your skill level and the types of outfits you make(or will love to make) we have books you can buy on the following topics.
+Depending on your skill level and the types of outfits you make(or will love to make) we have books on the following topics.
 
 - [Mastering the Basic Pattern Set](https://paystack.com/buy/mastering-the-basic-pattern-set)
 - [Mastering the Bustier Blouses](https://paystack.com/buy/mastering-the-bustier-blouses)
