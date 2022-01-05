@@ -17,10 +17,6 @@ use App\Notifications\RegistrationEmailNotification;
 |
 */
 
-// Route::get('/', function () {
-//     // return view('welcome');
-//     return view('index');
-// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -50,7 +46,7 @@ Route::get('/notification', function () {
 });
 
 Route::get('/notification2', function () {
-    $applicant = Applicant::find(2);
+    $applicant = Applicant::find(146);
 
     return (new ApprovalEmailNotification($applicant))
                 ->toMail($applicant->first_name);

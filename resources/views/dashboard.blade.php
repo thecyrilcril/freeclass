@@ -179,8 +179,9 @@
                             <th>Email</th>
                             <th class="w-32">Phone number</th>
                             <th class="w-10">Ilorin?</th>
-                            <th class="w-56">Experience</th>
-                            <th class="w-24">Channel</th>
+                            {{-- <th class="w-56">Experience</th> --}}
+                            {{-- <th class="w-24">Channel</th> --}}
+                            <th class="w-40">Registered Date</th>
                             <th class="w-32">Action</th>
                           </tr>
                         </thead>
@@ -193,8 +194,9 @@
                                    <td class="border border-purple-200 px-4 py-2" x-text="applicant.email">Email</td>
                                    <td class="border border-purple-200 px-4 py-2" x-text="applicant.phone_number">Phone number</td>
                                    <td class="border border-purple-200 px-4 py-2" x-text="firstCharacter(applicant.stay_in_ilorin)">Stay around Ilorin?</td>
-                                   <td class="border border-purple-200 px-4 py-2" x-text="shorten(applicant.experience)">Experience</td>
-                                   <td class="border border-purple-200 px-4 py-2" x-text="applicant.channel">Channel</td>
+                                   {{-- <td class="border border-purple-200 px-4 py-2" x-text="shorten(applicant.experience)">Experience</td> --}}
+                                   {{-- <td class="border border-purple-200 px-4 py-2" x-text="applicant.channel">Channel</td> --}}
+                                   <td class="border border-purple-200 px-4 py-2" x-text="applicant.created_at">Registered Date</td>
                                    <td class="border border-purple-200 px-4 py-1">
                                     <button @click="approveApplicant(applicant.id, applicant.label)" x-show="applicant.is_accepted == 0" class="inline-flex items-center px-4 py-1 bg-gray-800 border border-transparent rounded-md font-mediumcm text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150" x-text="approveButtonText"></button>
                                    </td>

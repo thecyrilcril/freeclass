@@ -59,7 +59,7 @@ class ApprovalSmsNotification extends Notification implements ShouldQueue
     public function toSMS($notifiable)
     {
         $recipient = ucfirst($this->applicant->first_name);
-        $message = "Congratulations $recipient, You have been selected to participate in Batch #E of our free pattern drafting training which starts on May. 24, 2021 by 9AM at No.3, Commissioner lodge way, GRA beside Timbola Hotel.\r\nIf you have trouble finding the venue, call 09070895516.\r\nCheck your email for further instructions. We are fired up to meet you in class!\r\n\r\nN.B: If you are not in Ilorin or you won't be able to attend this training at this time, kindly notify us as soon as you get this message via 09070895516.";
+        $message = "Well done! $recipient, You have been selected to participate our free pattern drafting training which starts on ". config('freeclass.start_date') . " by 9AM at No.3, Commissioner lodge way, GRA beside Timbola Hotel.\r\nIf you have trouble finding the venue, call 090 708 955 16.\r\nCheck your email for further instructions. We are fired up to meet you in class!\r\n\r\nN.B: If you are not in Ilorin or you won't be able to attend this training at this time, kindly notify us as soon as you get this message via 090 708 955 16.";
         return (new SMSMessage)
             ->content($message);
     }

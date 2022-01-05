@@ -15,7 +15,7 @@ Because this class is hands-on, there are few slots available and there is a sel
 
 \
 Good luck,<br><br>
-<img src="https://imageclothia.com/images/Kehinde-oni-avatar.jpg" alt="Kehinde Oni" title="Kehinde Oni, Creative Director, Image Clothia Innovations" width="90"><br>
+<img src="https://imageclothia.com/images/Kehinde-oni-avatar.png" alt="Kehinde Oni" title="Kehinde Oni, Creative Director, Image Clothia Innovations" width="90"><br>
 **Kehinde Oni.**<br>
 Creative Director,<br>
 {{ config('app.name') }} Innovations.

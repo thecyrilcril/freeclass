@@ -10,18 +10,24 @@ I want to remind you this training is hands-on and packed with so much value tha
 
 You have started your journey to becoming a truly *Professional fashion designer* and as such there are few things you need to get the best out of this free training.
 
+# Tools
 The First is getting the tools
 
-# Tools
 1. Nose Mask
 2. Notebook and Pen
 3. Ruler
 4. Pencil
 5. Eraser
-6. Brown paper / Pattern paper (available for sale during training)
-7. Cardboards
-8. Tape Rule
-9. Scissors
+6. French curve (Available for sale)
+7. Cardboards(Available for sale)
+8. Machine needle size HA 14(1pack)
+9. Office pins
+10. Hand needles
+11. Chalk
+12. Tape Rule
+13. 2 pair of Scissors
+14. Fabric and matching thread
+
 
 __*Please note that all these are mandatory for the class.*__
 
@@ -30,29 +36,18 @@ This training is designed to kick-start you into becoming a very efficient fashi
 
 I will urge you to make the most out of this opportunity, come with a *new notebook(with a pen of course)* and an open mind to learn.
 
-# What will I be learning—
-- The body anatomy and how it relates to fashion design.
-- How to take accurate body measurement.
-- How to cut sewing patterns.
-- Introduction to pattern drafting (why pattern drafting?).
-- How to cut pattern blocks.
-- Essential pattern drafting tools.
-- The basic Pattern Set.
-  - 2 Practical classes from the basic pattern set.
-- Design Analysis and Style deconstruction.
-- and more...
-
-In short you will be learning the *how*, *why* and *when*
+# WHAT WILL I LEARN FROM THIS CLASS?
+You will learn how to design complete garments using PATTERN DRAFTING.
 
 # Resources (Invest in yourself)
-Depending on your skill level and the types of outfits you make(or will love to make) we have books on the following topics.
+We have books on the following topics:
 
-- [Mastering the Basic Pattern Set](https://paystack.com/buy/mastering-the-basic-pattern-set)
-- [Mastering the Bustier Blouses](https://paystack.com/buy/mastering-the-bustier-blouses)
-- [Mastering the Circle Skirts](https://paystack.com/buy/mastering-the-circle-skirts)
-- [Mastering the Mermaid Skirts](https://paystack.com/buy/mastering-the-mermaid-skirts)
-- [Design a Shirt from Start to Finish in a Weekend (Female Version)](https://paystack.com/buy/design-a-shirt-from-start-to-finish-in-a-weekend-female)
-- [Design a Shirt from Start to Finish in a Weekend (Male Version)](https://paystack.com/buy/design-a-shirt-from-start-to-finish-in-a-weekend-male)
+- [Mastering the Basic Pattern Set](https://kehindeoni.com/shop/ebook/the-basic-pattern-set)
+- [Mastering the Bustier Blouses](https://kehindeoni.com/shop/ebook/mastering-bustier-blouses)
+- [Mastering the Circle Skirts](https://kehindeoni.com/shop/ebook/mastering-circle-skirts)
+- [Mastering the Mermaid Skirts](https://kehindeoni.com/shop/ebook/mastering-mermaid-skirts)
+- [Design a Shirt from Start to Finish in a Weekend (Female Version)](https://kehindeoni.com/shop/ebook/design-a-female-shirt)
+- [Design a Shirt from Start to Finish in a Weekend (Male Version)](https://kehindeoni.com/shop/ebook/design-a-male-shirt)
 
 
 

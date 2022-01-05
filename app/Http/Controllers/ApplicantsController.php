@@ -32,7 +32,7 @@ class ApplicantsController extends Controller
      */
     public function index()
     {
-        $applicants = new Applicant();
+        $applicants = Applicant::orderBy('created_at', 'desc');
         $approvals = Applicant::where('is_accepted', true)->count();
         return response()->json([
             'status' => 'success',

@@ -48,7 +48,7 @@ class ApprovalEmailNotification extends Notification implements ShouldQueue
         // gather properties to make available to the markdaown template
         $first_name = ucfirst($this->applicant->first_name);
         return (new MailMessage)
-                        ->subject('🎉🎉🎉Congrats! You are have been selected to attend our Free Pattern drafting class.')
+                        ->subject('🎉🎉🎉Congrats! You have been selected to attend our Free Pattern drafting class.')
                         ->markdown('mail.approval.notification', ['first_name' => $first_name]);
     }
 
